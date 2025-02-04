@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonService } from '../common.service';
-import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-weather-fore-cast',
@@ -27,6 +27,8 @@ export class WeatherForeCastComponent {
   }
 
   getWeatherIcon(iconCode: string): string {
+    console.log(iconCode);
+    
     return this.service.getWeatherIcon(iconCode);
   }
 
