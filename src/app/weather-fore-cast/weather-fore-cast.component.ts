@@ -32,6 +32,9 @@ export class WeatherForeCastComponent {
     return this.service.getWeatherIcon(iconCode);
   }
 
-  
+  close(){
+    this.weatherData = [];
+    this.selectedCity = '';
+  }
 
 }

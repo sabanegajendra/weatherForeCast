@@ -13,8 +13,8 @@
     background-color: #3a3939;
     
 }
-.closeIcon{
-   font-weight: normal !important;
+.closeIcon {
+    cursor: pointer;
 }
 
 .form-label{
