@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="header-container">
+            <h2 class="text-center mb-4">Weather Forecast</h2>
+            <h2 class="closeIcon mb-4">X</h2>
+        </div>
+        <div class="card1 p-4">
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <select class="form-select" [(ngModel)]="selectedCity">
+                    <!-- <option value="" >Select City</option> -->
+                    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                </select>
+            </div>
+
+            <div class="weather-grid">
+                <div *ngFor="let forecast of weatherData" class="weather-card">
+                    <p class="fristPara">{{ forecast.datetime | date: 'fullDate' }}</p>
+                    <img [src]="getWeatherIcon(forecast.weather.icon)" alt="icon" />
+                    <p class="fristPara">{{ forecast.temp }}°C</p>
+                </div>
+            </div>
+
+            <div class="button-container">
+                <button class="btn btn-danger mb-3" (click)="fetchWeatherData()">
+                    Apply
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
