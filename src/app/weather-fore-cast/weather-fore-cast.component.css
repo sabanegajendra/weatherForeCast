@@ -1,11 +1,19 @@
 
+
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .card {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    border: none !important;
+    margin-top: 1.5rem;
 }
 .header-container{
     display: flex;
@@ -37,7 +45,7 @@
 h2 {
     font-family: 'Open Sans', sans-serif;
     font-size: 32px;
-    font-weight: bold;
+    /* font-weight: bold; */
     background-color: #3a3939;
     color: white;
     height: 53px;
@@ -66,7 +74,7 @@ button {
     margin-top: 20px;
 }
 
-.weather-grid {
+/* .weather-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
@@ -88,7 +96,7 @@ button {
 }
 
 .weather-card img {
-    max-width: 100px;
+    max-width: 85px;
     margin-bottom: 10px;
 }
 
@@ -100,7 +108,39 @@ button {
 .weather-card p:nth-child(2) {
     font-size: 18px;
     font-weight: bold;
+} */
+
+.weather-grid {
+    display: flex;
+    flex-wrap: nowrap;  /* Prevent wrapping to a new line */
+    gap: 5px;  /* Adjust spacing between cards */
+    justify-content: space-between; /* Distribute items within the card */
+    overflow-x: auto; /* Enable horizontal scrolling if needed */
 }
+
+.weather-card {
+    flex: 1 1 auto; /* Make cards flexible */
+    max-width: 140px; /* Reduce width to fit within the card */
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.weather-card img {
+    max-width: 100px; /* Reduce image size */
+    height: auto;
+    margin-bottom: 5px;
+}
+
+.weather-card p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px; /* Reduce text size */
+    margin: 3px 0;
+    font-weight: bold;
+}
+
 
 /* Responsiveness */
 @media (max-width: 768px) {
@@ -115,7 +155,8 @@ button {
     }
 
     .weather-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        flex-wrap: nowrap;
+        overflow-x: auto;
     }
 }
 
