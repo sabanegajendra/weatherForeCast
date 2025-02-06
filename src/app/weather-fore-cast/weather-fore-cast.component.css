@@ -143,6 +143,15 @@ button {
 
 
 /* Responsiveness */
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 22px;  
+        padding: 10px;    
+        height: auto;    
+    }
+}
+
 @media (max-width: 768px) {
     button {
         width: 50%;  /* Adjust button width on smaller screens */
